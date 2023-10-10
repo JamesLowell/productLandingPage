@@ -1,0 +1,451 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #f0fbff;
+}
+
+/* css :corner-present */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0fbff;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: black;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: transparent;
+  border: transparent;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+$primaryDisplay:flex;
+$primaryPosition:center;
+$secondaryDirection:column;
+$primaryColor:#f3A7dc;
+$secondaryColor:black;
+$primaryFont: 'Quicksand';
+
+body.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+body.dark-mode .about-box{
+  color: black;
+}
+
+body.dark-mode .video-container{
+  color: black;
+}
+
+body.dark-mode .logo-box button{
+  background-color: $primaryColor;
+  color: black;
+}
+/* Update specific elements for dark mode */
+body.dark-mode #header {
+  background: rgba(0, 0, 0, 0.25);
+  /* Add dark mode styles for other elements as needed */
+}
+
+body.dark-mode #contact-container {
+  background-color: #111; /* Dark background color for the contact container */
+  /* Add dark mode styles for the contact container contents as needed */
+}
+
+/* Example: Dark mode styles for social media icons */
+body.dark-mode .fa {
+  background: $primaryColor; /* Darker background for social media icons */
+  color: black; /* White color for the icons */
+}
+
+#featured-title, #contact-title, #contact-container, #home-container, .logo-box, .product{
+  display: $primaryDisplay;
+  justify-content: $primaryPosition;
+  align-items: $primaryPosition;
+}
+
+#submit, #featured-title, #contact-title{
+  background-color: $secondaryColor;
+  color: $primaryColor;
+  font-family: $primaryFont;
+}
+
+#header {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  width: 100%;
+  align-items: $primaryPosition;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 2;
+}
+
+#nav-bar li{
+  display: $primaryDisplay;
+  list-style: none;
+  justify-content: space-evenly;
+  gap: 5rem;
+}
+
+#image {
+  display: $primaryDisplay;
+}
+
+#image div {
+  display: $primaryDisplay;
+  justify-content: $primaryPosition;
+  align-items: $primaryPosition;
+  font-family: 'chonburi';
+  color: $primaryColor;
+  margin-left: 1rem;
+}
+
+#image {
+  div{
+    img{
+      max-height: 3rem;
+      max-width: auto;
+      transform: rotate(40deg);
+      margin-right: 1rem;
+    }
+  }
+}
+
+#home-container {
+  position: relative;
+}
+
+#email-label {
+  position: absolute;
+  left: 15px;
+  top: 2rem;
+  transition: .3s ease;
+}
+
+#email {
+  margin: .5px;
+}
+
+#email:focus~label {
+  top: 1.5rem;
+  font-size: 12px;
+}
+
+#email:not(:placeholder-shown)~label {
+  top: 1.5rem;
+  font-size: 12px;
+}
+
+#submit {
+  padding:  15px 15px 15px;
+  cursor: pointer;
+  margin-top: .5rem;
+}
+
+#submit:hover{
+  opacity: 0.7;
+}
+
+#featured-title, #contact-title{
+  height: 20vh;
+  font-size: clamp(8px, 20vw, 30px);
+  font-weight: bold;
+}
+
+#contact-container{
+  height: 50vh;
+  width: 100%;
+  background-color: #f0fbff;
+}
+
+#video{
+padding: 1rem;
+}
+
+.nav-container{
+  padding-right: 5rem;
+}
+
+.nav-link {
+  font-family: $primaryFont;
+  cursor: pointer;
+}
+
+.logo-box {
+  flex-direction: $secondaryDirection;
+  height: 100vh;
+  width: 50vw;
+}
+
+.logo-box {
+  img {
+  height: 6rem;
+  width: auto;
+  transform: rotate(40deg);
+}
+}
+
+.logo-box h1 {
+  font-family: 'chonburi';
+  color: $primaryColor;
+  font-size: clamp(3rem, 5rem, 8rem);
+}
+
+.logo-box span {
+  font-family: $primaryFont;
+  letter-spacing: 1.5px;
+}
+.logo-box button{
+  cursor: pointer;
+  padding: .3rem;
+  background-color: black;
+  color: $primaryColor;
+  font-family: $primaryFont;
+}
+
+.about-box {
+  display: $primaryDisplay;
+  flex-direction: $secondaryDirection;
+  justify-content: $primaryPosition;
+  height: 100vh;
+  width: 50vw;
+  font-family: $primaryFont;
+  background-color: $primaryColor;
+  padding: 2rem;
+}
+
+.about-box>p {
+  width: 80%;
+}
+
+.user-details {
+  position: relative;
+}
+
+.user-details {
+  form {
+    input {
+      width: 45vw;
+      padding: 23px 15px 7px;
+      transition: .3s ease;
+      background-color: #f0fbff;
+          }
+      }
+  }
+
+
+.featured-box{
+  display: $primaryDisplay;
+  align-items: $primaryPosition;
+  justify-content: space-between;
+  height: 80vh;
+  width: 100%;
+}
+
+.product{
+  height: 80vh;
+  width: 50vw;
+}
+
+.product img{
+  height: 8rem;
+  width: auto;
+  background-color: $primaryColor;
+  padding: 2rem;
+  margin: 10px;
+}
+
+.product img:hover{
+  height: 15rem;
+  width: auto;
+}
+
+.video-container{
+  display: $primaryDisplay;
+  justify-content: $primaryPosition;
+  align-items: $primaryPosition;
+  height: 80vh;
+  width: 50vw;
+  font-family: $primaryFont;
+  background-color: $primaryColor;
+  padding-left: 0;
+}
+
+.video-description{
+  width: 60%;
+  font-size: clamp(8px, 10vw, 13px);
+  padding: 1rem;
+}
+
+.fa {
+  padding: 20px;
+  width: 5rem;
+  text-align: $primaryPosition;
+  text-decoration: none;
+  margin: 20px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: $primaryColor;
+  color: $secondaryColor;
+
+}
+.fa-instagram {
+  background: $primaryColor;
+  color: $secondaryColor;
+}
+.fa-youtube {
+  background: $primaryColor;
+  color: $secondaryColor;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-container{
+  padding-right: 0;
+  }
+  .user-details form input {
+  margin-top: .5rem;
+  }
+  .product img{
+  height: 6rem;
+  padding: 1rem;
+  margin: 8px;
+  }
+  .product img:hover{
+  height: 10rem;
+  }
+  .video-description{
+  width: 80%;
+  font-size: clamp(6px, 10vw, 10px);
+  padding: 1rem;
+  }
+  }
+@media only screen and (max-width: 600px) {
+
+a{
+  color: #f0fbff;
+}
+#header {
+  background: black;
+  opacity: 0.9;
+  width: 100%;
+  flex-direction: $secondaryDirection;
+  }
+#home-container {
+  flex-direction: $secondaryDirection;
+}
+#nav-bar {
+  padding-top: 1rem;
+  }
+#video{
+  padding: .5rem;
+  }
+  .about-box {
+  flex-direction: $secondaryDirection;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  }
+  
+  .user-details form input {
+  width: 80vw;
+  }
+  
+ .product{
+  flex-direction: $secondaryDirection;
+  height: 80vh;
+  width: 50vw;
+  }
+  
+  .video-description{
+  width: 50%;
+  padding: .5rem;
+    font-size: 9px;
+  }
+  
+  }
+  @media only screen and (max-width: 425px) {
+    #featured-title, #contact-title{
+    height: 10vh;
+    font-size: 1rem;
+    font-weight: bold;
+}
+    #nav-bar {
+    gap: 3rem;
+    }
+    
+    .video-container{
+    flex-direction: $secondaryDirection;
+    }
+    
+    .video-description{
+     width: 100%;
+     padding: .5rem;
+     }
+
+    .nav-container{
+    padding-right: 0;
+    }
+    
+    .user-details form input {
+    width: 70vw;
+    margin: 1rem;
+    }
+    
+    }

@@ -1,0 +1,21 @@
+.logo-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100vw; 
+}
+.logo-box img {
+  height: 6rem;
+  width: auto;
+  transform: rotate(40deg); }
+
+.logo-box h1 {
+  font-family: 'chonburi';
+  color: #f3A7dc;
+  font-size: 5rem; }
+
+.logo-box span {
+  font-family: "Quicksand";
+  letter-spacing: 1.5px; }
